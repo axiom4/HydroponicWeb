@@ -8,11 +8,17 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { SettingsConfigurationComponent } from './settings-configuration/settings-configuration.component';
 import { FormsModule } from '@angular/forms';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SettingsConfigurationComponent
+    SettingsConfigurationComponent,
+    SidebarComponent,
+    DashboardComponent,
+    ChangePasswordComponent
   ],
   imports: [
     BrowserModule,

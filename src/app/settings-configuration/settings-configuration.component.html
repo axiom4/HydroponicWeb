@@ -1,10 +1,10 @@
 <div class="card">
-  <div class="card-header">Configuration</div>
+  <div class="card-header" i18n>Configuration</div>
   <div class="card-body">
     <div class="card-text">
       <form #configForm="ngForm" *ngIf="config" (ngSubmit)="onSubmit()">
         <div class="form-group">
-          <label for="name">Hostname</label>
+          <label for="name" i18n>Hostname</label>
           <input
             type="text"
             class="form-control"
@@ -16,7 +16,7 @@
         </div>
 
         <div class="form-group">
-          <label for="name">Wi-Fi SSID</label>
+          <label for="name" i18n>Wi-Fi SSID</label>
           <input
             type="text"
             class="form-control"
@@ -28,7 +28,7 @@
         </div>
 
         <div class="form-group">
-          <label for="name">Wi-Fi Password</label>
+          <label for="name" i18n>Wi-Fi Password</label>
           <input
             type="text"
             class="form-control"
@@ -40,7 +40,7 @@
         </div>
 
         <div class="form-group">
-          <label for="name">Ntp Server</label>
+          <label for="name" i18n>Ntp Server</label>
           <input
             type="text"
             class="form-control"
@@ -52,7 +52,7 @@
         </div>
 
         <div class="form-group">
-          <label for="name">Moisture Air Value</label>
+          <label for="name" i18n>Moisture Air Value</label>
           <input
             type="text"
             class="form-control"
@@ -65,7 +65,7 @@
         </div>
 
         <div class="form-group">
-          <label for="name">Moisture Water Value</label>
+          <label for="name" i18n>Moisture Water Value</label>
           <input
             type="text"
             class="form-control"
@@ -80,7 +80,7 @@
         <button
           type="submit"
           class="btn btn-primary"
-          [disabled]="!configForm.form.valid"
+          [disabled]="!configForm.form.valid"  i18n
         >
           Submit
         </button>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SystemRebootService } from './system-reboot.service';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent  {
 
-  constructor() { }
+  constructor(private systemRebootService: SystemRebootService) { }
+
+  reboot() {
+    this.systemRebootService.systemReboot().subscribe(value => console.log(value));
+  }
 }
 

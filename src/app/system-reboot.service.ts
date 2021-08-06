@@ -1,17 +1,15 @@
-import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-
+import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { catchError, map, tap, timeout } from 'rxjs/operators';
-
+import { timeout, tap, catchError } from 'rxjs/operators';
 import { HydroponicConfig } from './hydroponic-config';
 
 @Injectable({
   providedIn: 'root'
 })
-export class HydroponicConfigService {
+export class SystemRebootService {
 
-  private configUrl = '/rest/system/config';
+  private configUrl = '/rest/system/reboot';
 
   constructor(private http: HttpClient) { }
 
@@ -35,26 +33,19 @@ export class HydroponicConfigService {
     };
   }
 
-  getHydroponicConfig(): Observable<HydroponicConfig> {
-    const url = `${this.configUrl}`;
-    return this.http.get<HydroponicConfig>(url).pipe(
-      timeout(10000),
-      tap(_ => this.log(`fetched HydroponicConfig`)),
-      catchError(this.handleError<HydroponicConfig>(`HydroponicConfig`))
-    );
-  }
-
-  setHydroponicConfig(config: HydroponicConfig): Observable<any> {
+  systemReboot(): Observable<any> {
     const url = `${this.configUrl}`;
 
     const httpOptions = {
-      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+      headers: new HttpHeaders(
+        { 'Authorization': 'Basic ' + btoa('admin:password') }
+        )
     };
 
-    return this.http.post<HydroponicConfig>(url, config, httpOptions).pipe(
+    return this.http.get<HydroponicConfig>(url, httpOptions).pipe(
       timeout(10000),
-      tap(_ => this.log(`fetched HydroponicConfig`)),
-      catchError(this.handleError<HydroponicConfig>(`HydroponicConfig`))
+      tap(_ => this.log(`fetched SystemReboot`)),
+      catchError(this.handleError<any>(`SystemReboot`))
     );
   }
 
