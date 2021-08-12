@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
+import { BatteryStatusComponent } from './battery-status/battery-status.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
     SettingsConfigurationComponent,
     SidebarComponent,
     DashboardComponent,
-    ChangePasswordComponent
+    ChangePasswordComponent,
+    BatteryStatusComponent
   ],
   imports: [
     BrowserModule,

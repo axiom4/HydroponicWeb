@@ -7,9 +7,8 @@ import { HydroponicConfig } from './hydroponic-config';
 @Injectable({
   providedIn: 'root'
 })
-export class SystemRebootService {
-
-  private configUrl = '/rest/system/reboot';
+export class BatteryStatusService {
+  private configUrl = '/rest/system/battery';
 
   constructor(private http: HttpClient) { }
 
@@ -33,19 +32,19 @@ export class SystemRebootService {
     };
   }
 
-  systemReboot(): Observable<any> {
+  getBatterySatus(): Observable<any> {
     const url = `${this.configUrl}`;
 
     const httpOptions = {
       headers: new HttpHeaders(
         { 'Authorization': 'Basic ' + btoa('admin:password') }
-        )
+      )
     };
 
     return this.http.get<any>(url, httpOptions).pipe(
       timeout(10000),
-      tap(_ => this.log(`fetched SystemReboot`)),
-      catchError(this.handleError<any>(`SystemReboot`))
+      tap(_ => console.log(_)),
+      catchError(this.handleError<any>(`BatteryStatus`))
     );
   }
 
