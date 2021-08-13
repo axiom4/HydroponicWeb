@@ -12,6 +12,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { BatteryStatusComponent } from './battery-status/battery-status.component';
+import { RelayComponent } from './relay/relay.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { BatteryStatusComponent } from './battery-status/battery-status.componen
     SidebarComponent,
     DashboardComponent,
     ChangePasswordComponent,
-    BatteryStatusComponent
+    BatteryStatusComponent,
+    RelayComponent
   ],
   imports: [
     BrowserModule,
