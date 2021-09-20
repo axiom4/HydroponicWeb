@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { SystemRebootService } from './system-reboot.service';
+import { Component } from '@angular/core';
+import { WebSocketDataService } from './web-socket-data.service';
 
 @Component({
   selector: 'app-root',
@@ -8,10 +8,8 @@ import { SystemRebootService } from './system-reboot.service';
 })
 export class AppComponent  {
 
-  constructor(private systemRebootService: SystemRebootService) { }
+  constructor(private websocketDataService: WebSocketDataService) {
 
-  reboot() {
-    this.systemRebootService.systemReboot().subscribe(value => console.log(value));
   }
 }
 
