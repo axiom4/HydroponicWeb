@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { RelayStatusService } from '../relay-status.service';
 
 @Component({
-  selector: 'app-relay',
-  templateUrl: './relay.component.html',
-  styleUrls: ['./relay.component.css']
+    selector: 'app-relay',
+    templateUrl: './relay.component.html',
+    styleUrls: ['./relay.component.css'],
+    standalone: false
 })
 export class RelayComponent implements OnInit {
 

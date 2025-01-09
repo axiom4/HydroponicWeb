@@ -3,9 +3,10 @@ import { HydroponicConfig } from '../hydroponic-config';
 import { HydroponicConfigService } from '../hydroponic-config.service';
 
 @Component({
-  selector: 'app-settings-configuration',
-  templateUrl: './settings-configuration.component.html',
-  styleUrls: ['./settings-configuration.component.css']
+    selector: 'app-settings-configuration',
+    templateUrl: './settings-configuration.component.html',
+    styleUrls: ['./settings-configuration.component.css'],
+    standalone: false
 })
 export class SettingsConfigurationComponent implements OnInit {
   config: HydroponicConfig | undefined;

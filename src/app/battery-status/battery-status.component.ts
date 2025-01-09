@@ -4,9 +4,10 @@ import { switchMap } from 'rxjs/operators';
 import { BatteryStatusService } from '../battery-status.service';
 
 @Component({
-  selector: 'app-battery-status',
-  templateUrl: './battery-status.component.html',
-  styleUrls: ['./battery-status.component.css']
+    selector: 'app-battery-status',
+    templateUrl: './battery-status.component.html',
+    styleUrls: ['./battery-status.component.css'],
+    standalone: false
 })
 export class BatteryStatusComponent implements OnInit {
   batteryStatus : number = 0;
