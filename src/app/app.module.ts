@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,29 +14,22 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
 import { BatteryStatusComponent } from './battery-status/battery-status.component';
 import { RelayComponent } from './relay/relay.component';
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    SettingsConfigurationComponent,
-    SidebarComponent,
-    DashboardComponent,
-    ChangePasswordComponent,
-    BatteryStatusComponent,
-    RelayComponent
-  ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    FormsModule,
-    AppRoutingModule,
-    ServiceWorkerModule.register('ngsw-worker.js', {
-      enabled: environment.production,
-      // Register the ServiceWorker as soon as the app is stable
-      // or after 30 seconds (whichever comes first).
-      registrationStrategy: 'registerWhenStable:30000'
-    })
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        SettingsConfigurationComponent,
+        SidebarComponent,
+        DashboardComponent,
+        ChangePasswordComponent,
+        BatteryStatusComponent,
+        RelayComponent
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        FormsModule,
+        AppRoutingModule,
+        ServiceWorkerModule.register('ngsw-worker.js', {
+            enabled: environment.production,
+            // Register the ServiceWorker as soon as the app is stable
+            // or after 30 seconds (whichever comes first).
+            registrationStrategy: 'registerWhenStable:30000'
+        })], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }
