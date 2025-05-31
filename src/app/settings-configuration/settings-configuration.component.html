@@ -2,89 +2,85 @@
   <div class="card-header" i18n>Configuration</div>
   <div class="card-body">
     <div class="card-text">
-      <form #configForm="ngForm" *ngIf="config" (ngSubmit)="onSubmit()">
-        <div class="form-group">
-          <label for="name" i18n>Hostname</label>
-          <input
-            type="text"
-            class="form-control"
-            id="hostname"
-            required
-            [(ngModel)]="config.hostname"
-            name="hostname"
-          />
-        </div>
-
-        <div class="form-group">
-          <label for="name" i18n>Wi-Fi SSID</label>
-          <input
-            type="text"
-            class="form-control"
-            id="wifi_ssid"
-            required
-            [(ngModel)]="config.wifi_ssid"
-            name="wifi_ssid"
-          />
-        </div>
-
-        <div class="form-group">
-          <label for="name" i18n>Wi-Fi Password</label>
-          <input
-            type="text"
-            class="form-control"
-            id="wifi_password"
-            required
-            [(ngModel)]="config.wifi_password"
-            name="wifi_password"
-          />
-        </div>
-
-        <div class="form-group">
-          <label for="name" i18n>Ntp Server</label>
-          <input
-            type="text"
-            class="form-control"
-            id="ntp_server"
-            required
-            [(ngModel)]="config.ntp_server"
-            name="ntp_server"
-          />
-        </div>
-
-        <div class="form-group">
-          <label for="name" i18n>Moisture Air Value</label>
-          <input
-            type="text"
-            class="form-control"
-            id="moisture_air_value"
-            required
-            disabled
-            [(ngModel)]="config.moisture_air_value"
-            name="moisture_air_value"
-          />
-        </div>
-
-        <div class="form-group">
-          <label for="name" i18n>Moisture Water Value</label>
-          <input
-            type="text"
-            class="form-control"
-            id="moisture_water_value"
-            required
-            disabled
-            [(ngModel)]="config.moisture_water_value"
-            name="moisture_water_value"
-          />
-        </div>
-
-        <button
-          type="submit"
-          class="btn btn-primary"
-          [disabled]="!configForm.form.valid"  i18n
-        >
+      @if (config) {
+        <form #configForm="ngForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="name" i18n>Hostname</label>
+            <input
+              type="text"
+              class="form-control"
+              id="hostname"
+              required
+              [(ngModel)]="config.hostname"
+              name="hostname"
+              />
+          </div>
+          <div class="form-group">
+            <label for="name" i18n>Wi-Fi SSID</label>
+            <input
+              type="text"
+              class="form-control"
+              id="wifi_ssid"
+              required
+              [(ngModel)]="config.wifi_ssid"
+              name="wifi_ssid"
+              />
+          </div>
+          <div class="form-group">
+            <label for="name" i18n>Wi-Fi Password</label>
+            <input
+              type="text"
+              class="form-control"
+              id="wifi_password"
+              required
+              [(ngModel)]="config.wifi_password"
+              name="wifi_password"
+              />
+          </div>
+          <div class="form-group">
+            <label for="name" i18n>Ntp Server</label>
+            <input
+              type="text"
+              class="form-control"
+              id="ntp_server"
+              required
+              [(ngModel)]="config.ntp_server"
+              name="ntp_server"
+              />
+          </div>
+          <div class="form-group">
+            <label for="name" i18n>Moisture Air Value</label>
+            <input
+              type="text"
+              class="form-control"
+              id="moisture_air_value"
+              required
+              disabled
+              [(ngModel)]="config.moisture_air_value"
+              name="moisture_air_value"
+              />
+          </div>
+          <div class="form-group">
+            <label for="name" i18n>Moisture Water Value</label>
+            <input
+              type="text"
+              class="form-control"
+              id="moisture_water_value"
+              required
+              disabled
+              [(ngModel)]="config.moisture_water_value"
+              name="moisture_water_value"
+              />
+          </div>
+          <button
+            type="submit"
+            class="btn btn-primary"
+            [disabled]="!configForm.form.valid"  i18n
+            >
           Submit
         </button>
-      </form>
+        </form>
+      }
     </div>
   </div>
 </div>
