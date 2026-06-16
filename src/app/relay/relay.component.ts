@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { RelayStatusService } from '../relay-status.service';
 
 @Component({
     selector: 'app-relay',
     templateUrl: './relay.component.html',
     styleUrls: ['./relay.component.css'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class RelayComponent implements OnInit {

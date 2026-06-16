@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ChangeDetectionStrategy } from '@angular/core';
 import { HydroponicConfig } from '../hydroponic-config';
 import { HydroponicConfigService } from '../hydroponic-config.service';
 
@@ -6,6 +6,7 @@ import { HydroponicConfigService } from '../hydroponic-config.service';
     selector: 'app-settings-configuration',
     templateUrl: './settings-configuration.component.html',
     styleUrls: ['./settings-configuration.component.css'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class SettingsConfigurationComponent implements OnInit {

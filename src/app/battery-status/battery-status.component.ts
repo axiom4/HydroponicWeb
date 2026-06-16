@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Subscription, timer } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { BatteryStatusService } from '../battery-status.service';
@@ -7,6 +7,7 @@ import { BatteryStatusService } from '../battery-status.service';
     selector: 'app-battery-status',
     templateUrl: './battery-status.component.html',
     styleUrls: ['./battery-status.component.css'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class BatteryStatusComponent implements OnInit {

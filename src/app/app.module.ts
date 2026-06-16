@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi, withXhr } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -31,5 +31,5 @@ import { RelayComponent } from './relay/relay.component';
             // Register the ServiceWorker as soon as the app is stable
             // or after 30 seconds (whichever comes first).
             registrationStrategy: 'registerWhenStable:30000'
-        })], providers: [provideHttpClient(withInterceptorsFromDi())] })
+        })], providers: [provideHttpClient(withXhr(), withInterceptorsFromDi())] })
 export class AppModule { }
